@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap");
+
+/* ----------------------- */
+/* - Custom properties     */
+/* ----------------------- */
+:root {
+	/* Font-families */
+	--font-primary: "Poppins", sans-serif;
+	--font-secondary: "Roboto", sans-serif;
+	--font-normal: sans-serif;
+
+	/* Font-sizes */
+	--fs-800: 6.25rem;
+	--fs-700: 3.5rem;
+	--fs-650: 2.5rem;
+	--fs-600: 2rem;
+	--fs-500: 1.75rem;
+	--fs-400: 1.125rem;
+	--fs-300: 1rem;
+
+	/* Colors */
+	--background-main-color: #f7f5f3;
+	--background-secondary-color: #f2f4f6;
+	--background-white: #fff;
+	--background-dark: #212121;
+	--text-dark: #272b30;
+	--text-white: #fff;
+	--text-grey: #4d4d4d;
+	--text-accent-1: #ffa000;
+	--text-accent-2: #006572;
+}
+
+/* ----------------------- */
+/* - Reset                 */
+/* ----------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+	margin: 0;
+}
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+
+	/* font-family: var(--font-secondary); */
+	font-family: var(--font-primary);
+	font-size: var(--fs-400);
+	color: var(--text-dark);
+	background-color: var(--background-main-color);
+}
+
+/* ----------------------- */
+/* - Utility Classes       */
+/* ----------------------- */
+
+.container {
+	padding-inline: 2em;
+	margin-inline: auto;
+	max-width: 80rem;
+}
+
+/* Colors */
+.bg-dark {
+	background-color: var(--background-dark);
+}
+.bg-white {
+	background-color: var(--background-white);
+}
+.text-dark {
+	color: var(--text-dark);
+}
+.text-white {
+	color: var(--text-white);
+}
+.text-accent-1 {
+	color: var(--text-accent-1);
+}
+
+/* Typografia */
+.ff-primary {
+	font-family: var(--font-primary);
+}
+.ff-secondary {
+	font-family: var(--font-secondary);
+}
+.uppercase {
+	text-transform: uppercase;
+}
+
+/* ----------------------- */
+/* - Header Nav content    */
+/* ----------------------- */
+
+.navigation {
+	height: 70px;
+	max-width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 30px;
+}
+
+.navigation > * + * {
+	height: 100%;
+}
+
+.navigation a:link,
+.navigation a:visited {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	text-decoration: none;
+	color: var(--text-white);
+	padding: 0 10px;
+}
+
+/* .navigation a:where(:not(:first-child)):hover {
+	color: #212121;
+	background: #ffa000;
+} */
+
+.navigation a:hover,
+.navigation a:focus {
+	font-style: bold;
+	color: #212121;
+	background: #ffa000;
+}
+
+nav,
+.navigation-menu,
+.nav-brand {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* ----------------------- */
+/* - Dropdown - MENU       */
+/* ----------------------- */
+.dropdown {
+	/* background: red; */
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: var(--text-accent-1);
+	/* min-width: 160px; */
+	min-width: 100%;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	right: 0.1px;
+}
+
+.dropdown-content a:link,
+.dropdown-content a:visited {
+	/* color: red; */
+	padding: 12px 10px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	/* background-color: var(--text-accent-1); */
+	background-color: var(--background-dark);
+	color: var(--text-white);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .navigation-menu {
+	background-color: var(--text-accent-1);
+}
+
+/* ----------------------- */
+/* - MEDIA QUERIES         */
+/* ----------------------- */
+@media (max-width: 768px) {
+	.dropdown {
+		display: inline-block;
+	}
+	nav .a-link {
+		display: none !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.dropdown {
+		display: none;
+	}
+
+	nav a {
+		display: inline-block;
+	}
+}
